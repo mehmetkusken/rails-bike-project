@@ -1,0 +1,11 @@
+<h1><img src=<%= @bicycle.urlpicture %>></h1>
+<h1>Brand: <%= @bicycle.brand %></h1>
+<h1>Wheel Size: <%= @bicycle.wheel_size %></h1>
+<h1>Color: <%= @bicycle.color %></h1>
+<h1>Price: <%= @bicycle.price %></h1>
+<p><%= button_to "Edit #{@bicycle.brand}", edit_bicycle_path(@bicycle) , method: :get %></p>
+<p><%= button_to "Delete #{@bicycle.brand}", bicycle_path(@bicycle) , method: :delete %></p>
+
+</br>
+</br>
+</br>

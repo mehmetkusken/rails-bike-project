@@ -1,0 +1,84 @@
+// Place all the styles related to the Bikes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@media screen {
+    body h1{
+      text-align: center;
+      font-size: 20px;
+      color:darkblue;
+    
+  
+    }
+    div h1 {
+      text-align: center;
+      font-size: 50px;
+      color:darkblue;
+    }
+    body #nav{
+      background-color: white;
+      width: 100%;
+    }
+    
+    body #nav li{
+      float: left;
+      list-style: none;
+      display: inline;
+      text-align: center;
+    }
+    
+    body #nav ul{
+      list-style-type: none;
+      overflow: hidden;
+      list-style: no-button;
+    }
+    body #nav ul li {
+      background-color:lightblue;
+    }
+    ul li{
+      margin-bottom: 10px;
+      text-align: center;
+      list-style: no-button;
+    }
+
+  div #list{
+  text-align: center;
+  font-size: 20px;
+  }
+   #link{
+    text-align: center;
+    font-size: 20px;
+  }
+   
+    
+    .media-object{
+    width: 300px;
+  
+  
+  }
+    html, body {
+      height: 100%;
+      width: 100%; 
+      
+    }
+    
+    img {
+        padding: 16px;
+        width: 350px;
+        text-align: center;
+        
+      }
+      #nav img {
+        padding: 16px;
+        width: 350px;
+        text-align: center;
+        
+      }
+     
+     
+      li {
+
+        text-align: center;
+        display: block;
+      }
+    
+  }

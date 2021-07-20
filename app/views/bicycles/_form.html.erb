@@ -1,0 +1,13 @@
+<%= form_for @bicycle do |u| %>
+    <%= u.label :brand %>
+    <%= u.text_field :brand %><br>
+    <%= u.label :wheel_size %>
+    <%= u.text_field :wheel_size %><br>
+    <%= u.label :color %>
+    <%= u.text_field :color %><br>
+    <%= u.label :price %>
+    <%= u.number_field :price%><br>
+    <%= u.label :urlpicture %>
+    <%= u.url_field :urlpicture %><br>
+    <%= u.submit "Submit!"%><br>
+    <% end %>
