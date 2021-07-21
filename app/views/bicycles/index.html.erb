@@ -1,22 +1,11 @@
 <h1>List Of Bicycles</h1>
-<h4>You have visited this page <%= pluralize @visit_count , "time"%></h4>
-<%= debug session[:cart] %>
-<ul>
+<div id="products">
 <% @bicycles.each do |b| %>
-    <li><%= link_to b.brand , b %><br>
-    <img src=<%= b.urlpicture %>><br>
+    <div class="product">
+    <p><%= link_to b.brand , b %></p>
+    <img src=<%= b.urlpicture %>>
     <p>Price : <%= b.price  %>$</p>
-    <% if @cart.include?(b)%>
-    <p>Bicycle is in your Cart </p>
-    <% else %>
-    <p><%= button_to "Add to Cart", add_to_cart_path(b.id), method: :post %></p>
-   
-    <% end %>
-
-    </li>
+    </div>
      <% end %>
-    
-    <br>
-    <br>
-    <br>
-</ul>
+
+</div>

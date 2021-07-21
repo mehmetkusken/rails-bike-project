@@ -20,8 +20,11 @@
 
  body{
 
-    background-color: lightblue;
+    background-color: white;
     text-align: center;
+    margin: 0;
+    padding: 0;
+    font-family: verdana,sans-serif;
  }
 
  body #nav{
@@ -33,4 +36,28 @@
 
   }
 
-  
+  #menu {
+   background-color: orangered;
+   padding: 30px 0 30px 0;
+
+  }
+
+  #menu a {
+     color: white;
+     font-weight: bold;
+     font-size: 25px;
+     margin-right: 20px;
+     text-decoration: none;
+  }
+  #menu a:hover{
+   color: #ccc;
+   
+
+  }
+ .userinfo {
+    border: 1px solid #111 ;
+    padding: 3px;
+
+ }
+
+ 

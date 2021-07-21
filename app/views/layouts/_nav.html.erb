@@ -1,12 +1,15 @@
-<nav>
+<nav id="mainMenu">
 <% if logged_in? %>
-<p> Welcome <%= current_user.username %> </p>
-<%= link_to "Inventory" , bicycles_path%>
+<div id="menu"><%= link_to "Inventory" , bicycles_path%>
 <%= link_to "Sell Your Bicycle" , new_bicycle_path%>
-<%= link_to "Logout" , logout_path, method: "delete" %>
-
+<span class="userinfo"> Hello <%= current_user.username %> 
+<%= link_to "Logout" , logout_path, method: "delete" %></span>
+</div>
 <% else %>
+<div id="login">
 <%= link_to "Login" , login_path %>
 <%= link_to "Sign Up" , new_user_path %>
+</div>
 <% end %>
+
 </nav>

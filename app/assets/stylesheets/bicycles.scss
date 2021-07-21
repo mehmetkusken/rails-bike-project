@@ -31,14 +31,8 @@
       overflow: hidden;
       list-style: no-button;
     }
-    body #nav ul li {
-      background-color:lightblue;
-    }
-    ul li{
-      margin-bottom: 10px;
-      text-align: center;
-      list-style: no-button;
-    }
+    
+  
 
   div #list{
   text-align: center;
@@ -73,12 +67,29 @@
         text-align: center;
         
       }
-     
-     
-      li {
 
-        text-align: center;
-        display: block;
-      }
+    div.product {
+      border: 1px solid #ddd;
+      float: left;
+      width: 400px;
+      height: 650px;
+    }
+    div.product a {
+     color: white;
+     text-decoration: none;
+     font-weight: bold;
+     display: block;
+     background-color: orangered;
+     padding: 8px;
+     margin: 0;
+    }
+
+    div.product a:hover {
+      color: #ccc;
+   
+     }
+     
+     
+      
     
   }
