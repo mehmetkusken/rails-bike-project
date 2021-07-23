@@ -3,8 +3,31 @@
 <h1>Wheel Size: <%= @bicycle.wheel_size %></h1>
 <h1>Color: <%= @bicycle.color %></h1>
 <h1>Price: <%= @bicycle.price %></h1>
+<p><%= button_to "PAYPAL ", checkout_create_path , method: :post , params: {id: @bicycle.id}%></p>
 <p><%= button_to "Edit #{@bicycle.brand}", edit_bicycle_path(@bicycle) , method: :get %></p>
 <p><%= button_to "Delete #{@bicycle.brand}", bicycle_path(@bicycle) , method: :delete %></p>
+
+
+
+
+
+
+
+
+
+<%= form_for [@bicycle , @payment] do |p| %>
+    <%= p.label :card_information %>
+    <%= p.text_field :card_information %><br>
+    <%= p.label :exp_date %>
+    <%= p.text_field :exp_date %><br>
+    <%= p.label :security_code %>
+    <%= p.text_field :security_code %><br>
+    <%= p.submit "Submit Payment"%><br>
+    <% end %>
+   
+    
+
+
 
 </br>
 </br>

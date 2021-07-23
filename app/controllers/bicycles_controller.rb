@@ -8,6 +8,8 @@ class BicyclesController < ApplicationController
     end
     
     def show
+        @bicycle = Bicycle.find(params[:id])
+        @payment = Payment.find_or_initialize_by(user: current_user, bicycle: @bicycle)
         
     end
 

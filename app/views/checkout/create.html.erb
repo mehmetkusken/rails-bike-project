@@ -1,0 +1,14 @@
+<h1>Hello</h1>
+<h1>Brand: <%= @bicycle.brand %></h1>
+<h1><img src=<%= @bicycle.urlpicture %>></h1>
+<h1>Price: <%= @bicycle.price %></h1>
+
+const stripe = Stripe('<%= Rails.configuration.stripe[:publishable_key] %>');
+stripe.redirectToCheckout({
+sessionId: '<%= @session.id%>'
+}).then (function(result) {
+console.log(result.error.message);
+
+
+
+});
