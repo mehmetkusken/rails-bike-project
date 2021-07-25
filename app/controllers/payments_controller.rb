@@ -7,7 +7,7 @@ class PaymentsController < ApplicationController
         @payment = @bicycle.payments.build(payment_params)
         @payment.user = current_user
         if @payment.save
-            redirect_to bicycles_path
+            redirect_to checkout_success_path
         else
             redirect_to @bicycle
         end
@@ -15,7 +15,7 @@ class PaymentsController < ApplicationController
 
     def update
         if @payment.update(payment_params)
-            redirect_to bicycles_path
+            redirect_to checkout_success_path
         else
             redirect_to @bicycle
         end

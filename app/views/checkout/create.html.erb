@@ -1,14 +1,33 @@
-<h1>Hello</h1>
 <h1>Brand: <%= @bicycle.brand %></h1>
 <h1><img src=<%= @bicycle.urlpicture %>></h1>
-<h1>Price: <%= @bicycle.price %></h1>
+<h1>Price: <%= @bicycle.price %>$</h1>
 
-const stripe = Stripe('<%= Rails.configuration.stripe[:publishable_key] %>');
-stripe.redirectToCheckout({
-sessionId: '<%= @session.id%>'
-}).then (function(result) {
-console.log(result.error.message);
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 
 
+  <input type="hidden" name="business" value="<%= current_user.email %>">
 
-});
+  
+  <input type="hidden" name="cmd" value="_xclick">
+
+  <!-- Specify details about the item that buyers will purchase. -->
+  <input type="hidden" name="item_name" value="<%= @bicycle.brand %>">
+  <input type="hidden" name="amount" value="<%= @bicycle.price %>">
+  <input type="hidden" name="currency_code" value="USD">
+
+  <!-- Specify the discount percentages that apply to the item. -->
+  <input type="hidden" name="discount_rate" value="0">
+  <input type="hidden" name="discount_rate2" value="100">
+  <input type="hidden" name="discount_num" value="1">
+
+  <!-- Prompt buyers to enter the quantities they want. -->
+  <input type="hidden" name="undefined_quantity" value="1">
+
+  <!-- Display the payment button. -->
+  <input type="image" name="submit" border="0"
+    src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+    alt="Buy Now">
+  <img alt="" border="0" width="1" height="1"
+    src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+
+</form>

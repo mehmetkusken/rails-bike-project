@@ -8,11 +8,12 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#login", as: "login"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#logout", as: "logout"
+  get "/auth/:provider/callback", to: "sessions#omniauth"
 
   scope '/checkout' do
     post 'create', to: 'checkout#create', as: 'checkout_create'
-    get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
     get 'success', to: 'checkout#success', as: 'checkout_success'
+    post 'card', to: 'checkout#card', as: 'checkout_card'
   end
 
 
