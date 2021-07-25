@@ -3,9 +3,8 @@ class BicyclesController < ApplicationController
     
     
     def index
-
-        @bicycles = Bicycle.all
-       
+        @params = params.permit(:search).to_h
+        @bicycles = Bicycle.filter_by_params(@params)
     end
     
     def show
