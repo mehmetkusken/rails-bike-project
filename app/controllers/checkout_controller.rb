@@ -12,4 +12,5 @@ class CheckoutController < ApplicationController
     def success
     end
 
+
 end

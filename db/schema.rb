@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_25_044703) do
+ActiveRecord::Schema.define(version: 2021_07_28_020454) do
 
   create_table "bicycles", force: :cascade do |t|
     t.string "brand"
@@ -22,10 +22,29 @@ ActiveRecord::Schema.define(version: 2021_07_25_044703) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "bicycles_orders", force: :cascade do |t|
+    t.integer "order_id", null: false
+    t.integer "bicycle_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bicycle_id"], name: "index_bicycles_orders_on_bicycle_id"
+    t.index ["order_id"], name: "index_bicycles_orders_on_order_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "status_code"
+    t.string "status"
+    t.string "paypal_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "payments", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "bicycle_id", null: false
-    t.integer "card_information"
+    t.string "card_information"
     t.integer "exp_date"
     t.integer "security_code"
     t.datetime "created_at", precision: 6, null: false
@@ -44,6 +63,9 @@ ActiveRecord::Schema.define(version: 2021_07_25_044703) do
     t.string "provider"
   end
 
+  add_foreign_key "bicycles_orders", "bicycles"
+  add_foreign_key "bicycles_orders", "orders"
+  add_foreign_key "orders", "users"
   add_foreign_key "payments", "bicycles"
   add_foreign_key "payments", "users"
 end
