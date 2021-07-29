@@ -1,5 +1,5 @@
 class BicyclesController < ApplicationController
-    before_action :set_bicycle, only: [:show, :edit, :update, :destroy]
+    before_action :set_bicycle, only: [:show, :edit, :update]
     
     
     def index
@@ -37,12 +37,6 @@ class BicyclesController < ApplicationController
             render :edit
         end
     end
-
-    def destroy
-        @bicycle.destroy
-        redirect_to bicycles_path
-    end
-
 
       private
 

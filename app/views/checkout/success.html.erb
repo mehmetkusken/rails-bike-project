@@ -1,6 +1,6 @@
 <h1>Your Payment is Successful</h1>
 
-<% if current_user.id == Payment.first..hunderth.user.id %>
+<% if current_user.id == Payment.last.user.id %>
     <div class="product">
     <p>Brand: <%= Payment.last.bicycle.brand  %></p>
     <img src=<%= Payment.last.bicycle.urlpicture  %>>
