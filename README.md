@@ -4,7 +4,7 @@
 ## Objectives
 Ruby on Rails application that uses
 
-A sqlite database ActiveRecord Restful routes , Sessions , Login/Logout , Api , Paypal payment option
+A sqlite database ActiveRecord Restful routes , Sessions , Login/Logout , Api 
 
 ## Overview
 The goal of this project is to build Bicycle Shop that you can sell/buy your Bicycle .
@@ -48,7 +48,7 @@ There are two controller actions, one to load the create bicycle form, and one t
 You will need to create a controller action that displays the information for a single bicycle. You will want the controller action to respond to a GET request to /bicycles/:id.
 
 ## Buy Bicycle
-You will have two option for payment method . You can make a payment via Paypal or you can pay via my app . You have to write your Credit card number Exp.year and security number . 
+You will have two option for payment method . You can make a payment via my app . You have to write your Credit card number Exp.year and security number . 
 
 ## Sign Up
 There are two controller actions, one to display the user signup and one to process the form submission. The controller action that processes the form submission should create the user and save it to the database.

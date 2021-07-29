@@ -4,22 +4,9 @@
 <h1>Color: <%= @bicycle.color %></h1>
 <h1>Price: $<%= @bicycle.price %></h1>
 <p><%= button_to "Edit #{@bicycle.brand}", edit_bicycle_path(@bicycle) , method: :get %></p>
-
-
-</br>
-</br>
-</br>
 </br>
 <h1>Payment</h1>
-
-   
     <p><%= button_to "Card ", checkout_card_path , method: :post , params: {id: @bicycle.id}%></p>
-    <p><%= button_to "PAYPAL ", checkout_create_path , method: :post , params: {id: @bicycle.id}%></p>
-    
-    
-
-
-
 </br>
 </br>
 </br>

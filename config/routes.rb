@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback", to: "sessions#omniauth"
 
   scope '/checkout' do
-    post 'create', to: 'checkout#create', as: 'checkout_create'
     get 'success', to: 'checkout#success', as: 'checkout_success'
     post 'card', to: 'checkout#card', as: 'checkout_card'
   end
