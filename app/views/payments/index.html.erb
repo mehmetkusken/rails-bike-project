@@ -1,0 +1,9 @@
+<h1>Your Payment Information</h1>
+ <% @payments.each do |p| %>
+    <p>Credit Card Number: <%= p.card_information %></p>
+    <p>Experation Date:<%= p.exp_date %></p>
+    <p>Security Code:<%= p.security_code %></p>
+<% end %>
+
+
+<%= link_to "Add New Payment", new_payment_path %>

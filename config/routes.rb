@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :bicycles do
-  resources :payments, only: [:create , :update]
+  resources :payments, only: [:create , :update , :index]
   end
   resources :users 
 

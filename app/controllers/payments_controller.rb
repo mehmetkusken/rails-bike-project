@@ -13,6 +13,18 @@ class PaymentsController < ApplicationController
         end
     end
 
+    def index
+
+        if params[:bicycle_id]
+            @bicycle = Bicycle.find_by(params[:bicycle_id])
+            @payments = @bicycle.payments
+        else
+            @payments = Payment.all
+        end
+    end
+
+   
+
     def update
         if @payment.update(payment_params)
             redirect_to checkout_success_path

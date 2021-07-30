@@ -2,6 +2,7 @@
 <% if logged_in? %>
 <div id="menu"><%= link_to "Inventory" , bicycles_path%>
 <%= link_to "Sell Your Bicycle" , new_bicycle_path%>
+
 <span class="userinfo"> Hello <%= current_user.username %> 
 <%= link_to "Logout" , logout_path, method: "delete" %></span>
 </div>
