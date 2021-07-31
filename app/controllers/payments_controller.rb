@@ -14,14 +14,9 @@ class PaymentsController < ApplicationController
     end
 
     def index
-
-        if params[:bicycle_id]
-            @bicycle = Bicycle.find_by(params[:bicycle_id])
-            @payments = @bicycle.payments
-        else
-            @payments = Payment.all
-        end
+        @payments = Payment.all
     end
+    
 
    
 

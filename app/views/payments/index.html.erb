@@ -1,4 +1,4 @@
-<h1>Your Payment Information</h1>
+<h1>Your Transaction History</h1>
  <% @payments.each do |p| %>
     <% if p.user.id == current_user.id %>
     <img src=<%= p.bicycle.urlpicture  %>>
@@ -8,9 +8,6 @@
     <p>Bicycle Brand:<%= p.bicycle.brand %></p>
     <p>Buyer Name:<%= p.user.username %></p>
     <% else %>
-    <img src=<%= p.bicycle.urlpicture  %>>
-    <p>Bicycle Brand:<%= p.bicycle.brand %></p>
-    <p>Buyer Name:<%= p.user.username %></p>
     <% end %>
 <% end %>
 
