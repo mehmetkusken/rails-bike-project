@@ -1,0 +1,37 @@
+<h1>Hello</h1>
+<%= form_for [@bicycle , @payment] do |p|  %>
+
+  <div class="row">
+    <div class="col-75">
+      <div class="container">
+        <form action="/action_page.php">
+  
+          <div class="row">
+            
+            <div class="col-50">
+              <h3>Payment</h3>
+             
+              
+              <%= p.label :card_number %>
+              <%= p.text_field :card_information %><br>
+              <div class="row">
+                <div class="col-50">
+                <%= p.label :exp_year %>
+                <%= p.text_field :exp_date %><br>
+                </div>
+                <div class="col-50">
+                <%= p.label :security_code %>
+                <%= p.text_field :security_code %><br>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+          <%= p.label :bicycle%>
+          <%= p.collection_select :bicycle_id, Bicycle.all, :id, :brand, prompt: true %>
+          <%= p.submit "Submit Payment"%><br>
+        </form>
+      </div>
+    </div>
+    <% end %>
+  

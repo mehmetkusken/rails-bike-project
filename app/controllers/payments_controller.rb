@@ -3,6 +3,18 @@ class PaymentsController < ApplicationController
     before_action :set_payment , only:[:update]
     
 
+    def index
+        @bicycle = Bicycle.find(params[:bicycle_id])
+        @payments = @bicycle.payments
+        render  :index
+    end
+
+    def new
+        @bicycle = Bicycle.find(params[:bicycle_id])
+        @payment = Payment.find_or_initialize_by(user: current_user, bicycle: @bicycle)
+        render :new
+    end
+
     def create
         @payment = @bicycle.payments.build(payment_params)
         @payment.user = current_user
@@ -13,12 +25,7 @@ class PaymentsController < ApplicationController
         end
     end
 
-    def index
-        @payments = Payment.all
-    end
     
-
-   
 
     def update
         if @payment.update(payment_params)
