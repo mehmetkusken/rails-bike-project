@@ -20,6 +20,22 @@ This project is supported by bundler and includes a Gemfile.
 
 Run bundle install before getting started on the project.
 
+## Rails response
+Config/routes - matches route with controller/action
+logic in action will process the request
+Controller may interact with model
+Render view with given data
+
+## Nested Routes
+2 Nested routes => Index and New
+
+## Patterns for defining nested routes
+Define Routes config/routes
+Handle Request in our controller
+Render data on given view << really minimal changes need to the view >>
+nested routes for Bicycles resources
+bicycles/id/payments for index
+bicycles/id/payments/new for new
 
 ## Models
 There are three models in app/models, one User model , one Bicycle and one Payment. Both classes are inherit from ActiveRecord::Base.
