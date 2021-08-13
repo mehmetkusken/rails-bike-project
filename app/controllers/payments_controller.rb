@@ -6,14 +6,16 @@ class PaymentsController < ApplicationController
     def index
         @bicycle = Bicycle.find(params[:bicycle_id])
         @payments = @bicycle.payments
-        render  :index
+        
     end
 
     def new
         @bicycle = Bicycle.find(params[:bicycle_id])
         @payment = Payment.find_or_initialize_by(user: current_user, bicycle: @bicycle)
-        render :new
+        
     end
+
+    
 
     def create
         @payment = @bicycle.payments.build(payment_params)
@@ -21,7 +23,7 @@ class PaymentsController < ApplicationController
         if @payment.save
             redirect_to checkout_success_path
         else
-            redirect_to @bicycle
+            render :new
         end
     end
 

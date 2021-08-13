@@ -6,6 +6,7 @@ class BicyclesController < ApplicationController
         @params = params.permit(:search).to_h
         @bicycles = Bicycle.filter_by_params(@params)
     end
+    
     def show
         @payment = Payment.find_or_initialize_by(user: current_user, bicycle: @bicycle)
     end

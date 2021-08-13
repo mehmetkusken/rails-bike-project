@@ -1,5 +1,6 @@
 <h1>Your Transaction History</h1>
  <% @payments.each do |p| %>
+    
     <% if p.user.id == current_user.id %>
     <img src=<%= p.bicycle.urlpicture  %>>
     <p>Credit Card Number: <%= p.card_information %></p>
